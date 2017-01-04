@@ -61,7 +61,7 @@ public class MainActivity extends ListActivity {
         super.onListItemClick(l, v, position, id);
 
         Toast.makeText(this,partidas.get(position).getNome(),Toast.LENGTH_LONG).show();
-        
+
     }
 
     public void salvarNovasPartidas(){

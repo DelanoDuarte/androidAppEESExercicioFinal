@@ -9,13 +9,17 @@ import java.io.Serializable;
 public class Partida implements Serializable{
 
 
-    private Long id;
+    private Integer id;
     private String nome;
     private String local;
 
     public Partida(String nome, String local) {
         this.nome = nome;
         this.local = local;
+    }
+
+    public Partida() {
+
     }
 
     public String getNome() {
@@ -34,11 +38,11 @@ public class Partida implements Serializable{
         this.local = local;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }
