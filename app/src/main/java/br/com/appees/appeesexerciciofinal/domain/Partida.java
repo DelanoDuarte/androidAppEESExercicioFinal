@@ -1,6 +1,8 @@
 package br.com.appees.appeesexerciciofinal.domain;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by delan on 03/01/2017.
@@ -12,10 +14,14 @@ public class Partida implements Serializable{
     private Integer id;
     private String nome;
     private String local;
+    private Date data;
+    private List<Jogadores> jogadores;
 
-    public Partida(String nome, String local) {
+
+    public Partida(String nome, String local, Date data) {
         this.nome = nome;
         this.local = local;
+        this.data = data;
     }
 
     public Partida() {
@@ -44,5 +50,13 @@ public class Partida implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }

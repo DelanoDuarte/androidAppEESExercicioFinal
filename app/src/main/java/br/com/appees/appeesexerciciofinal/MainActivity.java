@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import br.com.appees.appeesexerciciofinal.domain.Partida;
 
@@ -68,8 +69,8 @@ public class MainActivity extends ListActivity {
 
         partidas = new ArrayList<Partida>();
 
-        Partida partida = new Partida("Partida 1","Local 1");
-        Partida partida1 = new Partida("Partida 2","Local 2");
+        Partida partida = new Partida("Partida 1","Local 1",new Date());
+        Partida partida1 = new Partida("Partida 2","Local 2", new Date());
 
         partidas.add(partida);
         partidas.add(partida1);
