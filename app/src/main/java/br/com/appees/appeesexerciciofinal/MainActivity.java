@@ -69,8 +69,8 @@ public class MainActivity extends ListActivity {
 
         partidas = new ArrayList<Partida>();
 
-        Partida partida = new Partida("Partida 1","Local 1",new Date());
-        Partida partida1 = new Partida("Partida 2","Local 2", new Date());
+        Partida partida = new Partida("Partida 1","Local 1",new Date(),null);
+        Partida partida1 = new Partida("Partida 2","Local 2", new Date(),null);
 
         partidas.add(partida);
         partidas.add(partida1);

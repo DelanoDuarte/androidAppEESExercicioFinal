@@ -1,4 +1,4 @@
-package br.com.appees.appeesexerciciofinal.repository.partida;
+package br.com.appees.appeesexerciciofinal.repository.jogador;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,27 +11,29 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
-import br.com.appees.appeesexerciciofinal.domain.Partida;
+import br.com.appees.appeesexerciciofinal.domain.Jogadores;
 
 /**
- * Created by delan on 03/01/2017.
+ * Created by delan on 04/01/2017.
  */
 
-public class PartidaRepositorySQLHelper extends OrmLiteSqliteOpenHelper {
+public class JogadorRepositorySQLHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String NOME_BANCO = "db_projeto";
     private static final int VERSAO_BANCO = 1;
 
-    private Dao<Partida,Integer> partidaDao = null;
+    private Dao<Jogadores,Integer> jogadorDAO = null;
 
-    public PartidaRepositorySQLHelper(Context context){
+
+    public JogadorRepositorySQLHelper(Context context){
         super(context,NOME_BANCO,null,VERSAO_BANCO);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
-            TableUtils.createTable(connectionSource, Partida.class);
+            TableUtils.createTable(connectionSource, Jogadores.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -40,16 +42,20 @@ public class PartidaRepositorySQLHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         try {
-            TableUtils.dropTable(connectionSource,Partida.class,true);
+            TableUtils.dropTable(connectionSource,Jogadores.class,true);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public Dao<Partida, Integer> getPartidaDao() throws SQLException {
-        if(this.partidaDao == null){
-            this.partidaDao = getDao(Partida.class);
+    public Dao<Jogadores, Integer> getJogadorDAO() {
+        if(this.jogadorDAO == null){
+            try {
+                this.jogadorDAO = getDao(Jogadores.class);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        return partidaDao;
+        return jogadorDAO;
     }
 }
