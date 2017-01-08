@@ -27,7 +27,7 @@ public class Partida implements Serializable{
     @DatabaseField(columnName = "local_partida")
     private String local;
 
-    @DatabaseField(dataType = DataType.STRING,columnName = "data_partida")
+    @DatabaseField(columnName = "data_partida")
     private Date data;
 
     private List<Jogadores> jogadores;
