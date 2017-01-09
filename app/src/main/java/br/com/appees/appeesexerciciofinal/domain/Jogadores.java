@@ -20,9 +20,13 @@ public class Jogadores implements Serializable{
     @DatabaseField(columnDefinition = "nivel_jogador")
     private Integer nivel;
 
-    public Jogadores(String nome, Integer nivel) {
+    @DatabaseField(foreign = true, foreignAutoRefresh = true, columnName = "id_partida")
+    private Partida partida;
+
+    public Jogadores(String nome, Integer nivel, Partida partida) {
         this.nome = nome;
         this.nivel = nivel;
+        this.partida = partida;
     }
 
     public Jogadores() {
@@ -51,5 +55,13 @@ public class Jogadores implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Partida getPartida() {
+        return partida;
+    }
+
+    public void setPartida(Partida partida) {
+        this.partida = partida;
     }
 }
