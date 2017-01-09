@@ -18,7 +18,7 @@ import br.com.appees.appeesexerciciofinal.domain.Partida;
 
 import static br.com.appees.appeesexerciciofinal.R.id.textoDaLista2;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
     ArrayList<Partida> partidas;
 
@@ -27,9 +27,9 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        salvarNovasPartidas();
+        //salvarNovasPartidas();
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.layout_itens_lista_tela_inicial,R.id.textoDaLista1, partidas.toArray()){
+        /*ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.layout_itens_lista_tela_inicial,R.id.textoDaLista1, partidas.toArray()){
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -45,25 +45,27 @@ public class MainActivity extends ListActivity {
 
                 return view;
             }
-        };
+        };*/
+
+        setContentView(R.layout.activity_main);
 
 
 
 
-        setListAdapter(arrayAdapter);
+        //setListAdapter(arrayAdapter);
 
 
 
     }
 
-    @Override
+    /*@Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
 
         super.onListItemClick(l, v, position, id);
 
         Toast.makeText(this,partidas.get(position).getNome(),Toast.LENGTH_LONG).show();
 
-    }
+    }*/
 
     public void salvarNovasPartidas(){
 
