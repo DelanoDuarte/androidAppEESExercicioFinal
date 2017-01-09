@@ -1,7 +1,9 @@
 package br.com.appees.appeesexerciciofinal.domain;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
@@ -27,16 +29,17 @@ public class Partida implements Serializable{
     @DatabaseField(columnName = "local_partida")
     private String local;
 
-    @DatabaseField(columnName = "data_partida")
+    @DatabaseField(columnName = "data_partida",dataType = DataType.DATE)
     private Date data;
 
-    private List<Jogadores> jogadores;
+    @ForeignCollectionField()
+    private ForeignCollection<Jogadores> jogadores;
 
     public Partida() {
 
     }
 
-    public Partida(String nome, Integer quantidadeJogadores, String local, Date data, List<Jogadores> jogadores) {
+    public Partida(String nome, Integer quantidadeJogadores, String local, Date data, ForeignCollection<Jogadores> jogadores) {
         this.nome = nome;
         this.quantidadeJogadores = quantidadeJogadores;
         this.local = local;
@@ -84,11 +87,11 @@ public class Partida implements Serializable{
         this.data = data;
     }
 
-    public List<Jogadores> getJogadores() {
+    public ForeignCollection<Jogadores> getJogadores() {
         return jogadores;
     }
 
-    public void setJogadores(List<Jogadores> jogadores) {
+    public void setJogadores(ForeignCollection<Jogadores> jogadores) {
         this.jogadores = jogadores;
     }
 }
