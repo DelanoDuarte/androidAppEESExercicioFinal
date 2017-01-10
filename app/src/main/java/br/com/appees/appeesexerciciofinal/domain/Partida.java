@@ -15,13 +15,14 @@ public class Partida implements Serializable{
     private String nome;
     private String local;
     private Date data;
+    private int qtdJogadoresTime;
     private List<Jogadores> jogadores;
 
 
-    public Partida(String nome, String local, Date data) {
+    public Partida(String nome, String local, int qtdJogadores) {
         this.nome = nome;
         this.local = local;
-        this.data = data;
+        this.qtdJogadoresTime = qtdJogadores;
     }
 
     public Partida() {

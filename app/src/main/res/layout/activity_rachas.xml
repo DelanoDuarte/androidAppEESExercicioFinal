@@ -41,6 +41,7 @@
         app:fabSize="normal"
         android:background="@color/colorPrimary"
         app:backgroundTint="@color/colorPrimaryDark"
+        android:onClick="CriarRacha"
         >
     </android.support.design.widget.FloatingActionButton>
 </android.support.design.widget.CoordinatorLayout>

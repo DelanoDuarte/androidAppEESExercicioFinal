@@ -1,6 +1,7 @@
 package br.com.appees.appeesexerciciofinal;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,6 +59,18 @@ public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
     }
 
+    public void AbrirRachas(View view)
+    {
+        Intent it = new Intent(this, Rachas.class);
+        startActivity(it);
+    }
+
+    public void AbrirJogadores(View view)
+    {
+        Intent it = new Intent(this, JogadoresActivity.class);
+        startActivity(it);
+    }
+
     /*@Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
 
@@ -67,15 +80,4 @@ public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
     }*/
 
-    public void salvarNovasPartidas(){
-
-        partidas = new ArrayList<Partida>();
-
-        Partida partida = new Partida("Partida 1","Local 1",new Date());
-        Partida partida1 = new Partida("Partida 2","Local 2", new Date());
-
-        partidas.add(partida);
-        partidas.add(partida1);
-
-    }
 }

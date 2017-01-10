@@ -18,13 +18,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/l_Nome"
+            android:id="@+id/l_NomeRacha"
             android:text="Nome"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/et_Nome"/>
+            android:id="@+id/et_NomeRacha"/>
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:id="@+id/ed_NumJogadores"/>
+            android:id="@+id/et_NumJogadores"/>
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/ed_Local"/>
+            android:id="@+id/et_Local"/>
     </LinearLayout>
 
     <LinearLayout
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="datetime"
-            android:id="@+id/ed_Horario"/>
+            android:id="@+id/et_Horario"/>
     </LinearLayout>
 
     <Button
@@ -92,5 +92,6 @@
         android:id="@+id/bt_Salvar"
         android:layout_below="@id/ll_Input4"
         android:layout_margin="50dp"
-        android:text="Salvar"/>
+        android:text="Salvar"
+        android:onClick="SalvarRacha"/>
 </RelativeLayout>
