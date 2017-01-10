@@ -16,7 +16,7 @@ import java.util.Date;
 
 import br.com.appees.appeesexerciciofinal.domain.Partida;
 
-import static br.com.appees.appeesexerciciofinal.R.id.textoDaLista2;
+//import static br.com.appees.appeesexerciciofinal.R.id.textoDaLista2;
 
 public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 

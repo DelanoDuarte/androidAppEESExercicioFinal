@@ -3,9 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/m_search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/m_Jogadores"
+        android:icon="@android:drawable/ic_menu_add"
         app:showAsAction="always"
-        android:title="@string/search"
+        android:title="Adicionar Jogadores"
+        />
+
+    <item
+        android:id="@+id/m_Sortear"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="always"
+        android:title="Sortear"
         />
 </menu>

@@ -12,9 +12,5 @@ public class Rachas extends AppCompatActivity {
         setContentView(R.layout.activity_rachas);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_rachas,menu);
-        return true;
-    }
+
 }
