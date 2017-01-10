@@ -16,10 +16,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.appees.appeesexerciciofinal.Rachas">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Jogadores"
+        android:textColor="@color/colorPrimaryDark"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvJogadores">
+        android:id="@+id/lvJogadores"
+        android:layout_marginTop="40dp">
     </ListView>
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
