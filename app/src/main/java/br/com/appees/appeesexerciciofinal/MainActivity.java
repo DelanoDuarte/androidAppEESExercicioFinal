@@ -3,6 +3,8 @@ package br.com.appees.appeesexerciciofinal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,34 +15,41 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
-    Button btnTelaJogador;
-    Button btnTelaPartida;
+    //Button btnTelaJogador;
+    //Button btnTelaPartida;
+    MenuItem menuItemPartida;
+    MenuItem menuItemJogador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        menuItemJogador = (MenuItem) findViewById(R.id.menuItemJogador);
+        menuItemPartida = (MenuItem) findViewById(R.id.menuItemPartida);
 
-        btnTelaJogador = (Button) findViewById(R.id.btJogadores);
-        btnTelaPartida = (Button) findViewById(R.id.btRachas);
 
-        btnTelaPartida.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),Rachas.class);
-                startActivity(intent);
-            }
-        });
-
-        btnTelaJogador.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),JogadoresActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_tela_inicial,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menuItemJogador:
+                Intent intent = new Intent(this,JogadoresActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menuItemPartida:
+                Intent intent1 = new Intent(this,Rachas.class);
+                startActivity(intent1);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

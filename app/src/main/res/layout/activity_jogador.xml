@@ -65,7 +65,10 @@
             android:id="@+id/bt_Salvar"
             android:text="Salvar"
             android:layout_marginTop="37dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorWhite"
+            android:textColor="@android:color/background_light"
+            />
     </LinearLayout>
 
 

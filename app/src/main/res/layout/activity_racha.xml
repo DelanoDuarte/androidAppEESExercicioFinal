@@ -10,11 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.appees.appeesexerciciofinal.RachaActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/ll_Input">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +30,8 @@
             android:inputType="text"
             android:id="@+id/et_Nome"/>
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -100,5 +104,9 @@
         android:id="@+id/bt_Salvar"
         android:layout_below="@id/ll_Input4"
         android:layout_margin="50dp"
-        android:text="Salvar"/>
+        android:text="Salvar"
+        android:elevation="0dp"
+        android:background="@color/colorWhite"
+        android:textColor="@android:color/background_light"
+        />
 </RelativeLayout>

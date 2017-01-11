@@ -11,7 +11,9 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
+import br.com.appees.appeesexerciciofinal.domain.domain.Jogadores;
 import br.com.appees.appeesexerciciofinal.domain.domain.Partida;
 import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
@@ -48,6 +50,8 @@ public class RachaActivity extends AppCompatActivity {
                 partida.setNome(editTextNome.getText().toString());
                 partida.setLocal(editTextLocal.getText().toString());
                 partida.setQuantidadeJogadores(Integer.valueOf(editTextNumJogadores.getText().toString()));
+
+
 
                 try {
                     getRepositorySQLHelper().getPartidaDao().create(partida);
