@@ -1,11 +1,13 @@
 package br.com.appees.appeesexerciciofinal;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
@@ -55,6 +57,9 @@ public class RachaActivity extends AppCompatActivity {
 
                 try {
                     getRepositorySQLHelper().getPartidaDao().create(partida);
+                    Intent intent = new Intent(view.getContext(),Rachas.class);
+                    startActivity(intent);
+                    Toast.makeText(view.getContext(),"Novo Racha adicionado com Sucesso !",Toast.LENGTH_LONG).show();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

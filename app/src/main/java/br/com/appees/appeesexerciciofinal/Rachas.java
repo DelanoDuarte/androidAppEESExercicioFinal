@@ -1,13 +1,17 @@
 package br.com.appees.appeesexerciciofinal;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
@@ -39,6 +43,14 @@ public class Rachas extends AppCompatActivity {
             }
         });
 
+        //Cursor cursor = null;
+       // String[] campo = new String[]{"nome"};
+        //int[] idViews = new int[]{R.id.txtNomePartida};
+
+        //SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(getBaseContext(),R.layout.activity_layout_list_rachas,cursor,campo,idViews,0);
+        //listView = (ListView) findViewById(R.id.lvRachas);
+        //listView.setAdapter(simpleCursorAdapter);
+
 
         List<String> partidasTemp = new ArrayList<>();
 
@@ -61,11 +73,13 @@ public class Rachas extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent();
-
-                Bundle bundle= new Bundle();
-
+                Partida partida = partidaList.get(i);
+                Intent intent = new Intent(view.getContext(),DetalhesRacha.class);
+                intent.putExtra("id_partida",partida.getId().toString());
                 startActivity(intent);
+                //Log.i("Id:", String.valueOf(partida.getId()));
+
+               // Toast.makeText(getApplicationContext(), "Teste Id: " + partida.getId(), Toast.LENGTH_LONG).show();
             }
         });
 

@@ -18,7 +18,9 @@
         <activity android:name=".Rachas" />
         <activity android:name=".RachaActivity" />
         <activity android:name=".JogadoresActivity" />
-        <activity android:name=".JogadorActivity"></activity>
+        <activity android:name=".JogadorActivity" />
+        <activity android:name=".DetalhesRacha" />
+        <activity android:name=".repository.repository.repository.DetalhesJogador"></activity>
     </application>
 
 </manifest>

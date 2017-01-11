@@ -1,11 +1,13 @@
 package br.com.appees.appeesexerciciofinal;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
@@ -46,6 +48,9 @@ public class JogadorActivity extends AppCompatActivity {
 
                 try {
                     getRepositorySQLHelper().getJogadorDAO().create(jogadores);
+                    Intent intent = new Intent(view.getContext(),JogadoresActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(view.getContext(),"Novo Jogador adicionado com Sucesso !",Toast.LENGTH_LONG).show();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

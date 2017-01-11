@@ -57,21 +57,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="cc32ad0e42473aa3866c2bba440f99a259ec8ffd">
-        <dex dex="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_237b8714bc50df045ea08eefa2d41cab1a3f916a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
         <dex dex="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_ec001f7de51fa3e1d96ec45fd4c8be7ee8ae928a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cff3c759b99c44b7e61c1133b7ea568f70298bc5">
+        <dex dex="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_237b8714bc50df045ea08eefa2d41cab1a3f916a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -142,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="3e36a93f7eacca882585a0f33dec2b7e0cb06c03">
+        sha1="d06ddcd3d6ddfe3d2e3b9ff8334e2069a851e00b">
         <dex dex="C:\Users\delano.duarte\StudioProjects\appUece\androidAppEESExercicioFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_367a0d63091ef72a3c7f4d348c5343e0665481f4\classes.dex" />
     </item>
     <item

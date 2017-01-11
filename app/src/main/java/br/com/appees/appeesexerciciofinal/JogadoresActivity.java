@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appees.appeesexerciciofinal.domain.domain.Jogadores;
+import br.com.appees.appeesexerciciofinal.repository.repository.repository.DetalhesJogador;
 import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
 public class JogadoresActivity extends AppCompatActivity {
@@ -60,10 +61,9 @@ public class JogadoresActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent();
-
-                Bundle bundle= new Bundle();
-
+                Jogadores jogadores = jogadoresList.get(i);
+                Intent intent = new Intent(view.getContext(), DetalhesJogador.class);
+                intent.putExtra("id_jogador", jogadores.getId().toString());
                 startActivity(intent);
             }
         });

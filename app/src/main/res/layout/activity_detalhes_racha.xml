@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detalhes_partida"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.appees.appeesexerciciofinal.DetalhesRacha">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+
+        android:id="@+id/ll_Input">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="text"
+            android:id="@+id/txtNomeDetalhesPartida"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_Input"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:id="@+id/ll_Input2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/l_DetalhesNumJogadores"
+            android:text="Número de Jogadores"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:id="@+id/txtNumJogadoresDetalhesPartida"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:layout_below="@id/ll_Input2"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_Input3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/l_DetalhesLocal"
+            android:text="Local"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:id="@+id/txtLocalDetalhesPartida"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ll_Input3"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:id="@+id/ll_Input4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/l_DetalhesHorario"
+            android:text="Horário"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="datetime"
+            android:paddingLeft="10dp"
+            android:id="@+id/txtHorarioDetalhesPartida"/>
+    </LinearLayout>
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_Input4"
+        android:layout_marginTop="87dp" />
+
+    <TextView
+        android:text="Jogadores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:id="@+id/textView"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/ll_Input4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
