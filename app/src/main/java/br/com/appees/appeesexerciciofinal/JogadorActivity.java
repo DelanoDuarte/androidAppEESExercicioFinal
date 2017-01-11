@@ -2,6 +2,7 @@ package br.com.appees.appeesexerciciofinal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -11,7 +12,7 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import java.sql.SQLException;
 
 import br.com.appees.appeesexerciciofinal.domain.domain.Jogadores;
-import br.com.appees.appeesexerciciofinal.repository.repository.jogador.JogadorRepositorySQLHelper;
+import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
 public class JogadorActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class JogadorActivity extends AppCompatActivity {
 
     Button btnSalvarJogador;
 
-    private JogadorRepositorySQLHelper repositorySQLHelper = null;
+    private RepositorySQLHelper repositorySQLHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +34,15 @@ public class JogadorActivity extends AppCompatActivity {
         //editTextNivelJogador = (EditText) findViewById(R.id.ed_NivelJogadores);
         ratingBarNivelJogador = (RatingBar) findViewById(R.id.ratingBarNivelJogador);
 
-        ratingBarNivelJogador.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+        btnSalvarJogador = (Button) findViewById(R.id.bt_Salvar);
 
+        btnSalvarJogador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Jogadores jogadores = new Jogadores();
 
                 jogadores.setNome(editTextNome.getText().toString());
-                jogadores.setNivel(ratingBarNivelJogador.getNumStars());
+                jogadores.setNivel(ratingBarNivelJogador.getRating());
 
                 try {
                     getRepositorySQLHelper().getJogadorDAO().create(jogadores);
@@ -53,9 +55,9 @@ public class JogadorActivity extends AppCompatActivity {
     }
 
 
-    public JogadorRepositorySQLHelper getRepositorySQLHelper() {
+    public RepositorySQLHelper getRepositorySQLHelper() {
         if(this.repositorySQLHelper == null){
-            this.repositorySQLHelper = OpenHelperManager.getHelper(this,JogadorRepositorySQLHelper.class);
+            this.repositorySQLHelper = OpenHelperManager.getHelper(this,RepositorySQLHelper.class);
         }
         return repositorySQLHelper;
     }

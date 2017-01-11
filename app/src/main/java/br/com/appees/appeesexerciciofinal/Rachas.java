@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appees.appeesexerciciofinal.domain.domain.Partida;
-import br.com.appees.appeesexerciciofinal.repository.repository.partida.PartidaRepositorySQLHelper;
+import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
 public class Rachas extends AppCompatActivity {
 
     ListView listView;
     List<Partida> partidaList;
-    private PartidaRepositorySQLHelper repositorySQLHelper = null;
+    private RepositorySQLHelper repositorySQLHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +71,9 @@ public class Rachas extends AppCompatActivity {
 
     }
 
-    public PartidaRepositorySQLHelper getRepositorySQLHelper() {
+    public RepositorySQLHelper getRepositorySQLHelper() {
         if(repositorySQLHelper == null){
-            repositorySQLHelper = OpenHelperManager.getHelper(this,PartidaRepositorySQLHelper.class);
+            repositorySQLHelper = OpenHelperManager.getHelper(this,RepositorySQLHelper.class);
         }
         return repositorySQLHelper;
     }

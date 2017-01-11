@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 import br.com.appees.appeesexerciciofinal.domain.domain.Partida;
-import br.com.appees.appeesexerciciofinal.repository.repository.partida.PartidaRepositorySQLHelper;
+import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
 public class RachaActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class RachaActivity extends AppCompatActivity {
 
     Button btnCadastrar;
 
-    private PartidaRepositorySQLHelper repositorySQLHelper = null;
+    private RepositorySQLHelper repositorySQLHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +65,9 @@ public class RachaActivity extends AppCompatActivity {
         return true;
     }
 
-    public PartidaRepositorySQLHelper getRepositorySQLHelper() {
+    public RepositorySQLHelper getRepositorySQLHelper() {
         if(repositorySQLHelper == null){
-            repositorySQLHelper = OpenHelperManager.getHelper(this,PartidaRepositorySQLHelper.class);
+            repositorySQLHelper = OpenHelperManager.getHelper(this,RepositorySQLHelper.class);
         }
         return repositorySQLHelper;
     }

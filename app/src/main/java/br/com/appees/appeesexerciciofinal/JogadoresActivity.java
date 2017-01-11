@@ -16,15 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.appees.appeesexerciciofinal.domain.domain.Jogadores;
-import br.com.appees.appeesexerciciofinal.domain.domain.Partida;
-import br.com.appees.appeesexerciciofinal.repository.repository.jogador.JogadorRepositorySQLHelper;
-import br.com.appees.appeesexerciciofinal.repository.repository.partida.PartidaRepositorySQLHelper;
+import br.com.appees.appeesexerciciofinal.repository.repository.repository.RepositorySQLHelper;
 
 public class JogadoresActivity extends AppCompatActivity {
 
     ListView listView;
     List<Jogadores> jogadoresList;
-    private JogadorRepositorySQLHelper repositorySQLHelper = null;
+    private RepositorySQLHelper repositorySQLHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +70,9 @@ public class JogadoresActivity extends AppCompatActivity {
 
     }
 
-    public JogadorRepositorySQLHelper getRepositorySQLHelper() {
+    public RepositorySQLHelper getRepositorySQLHelper() {
         if(this.repositorySQLHelper == null){
-            this.repositorySQLHelper = OpenHelperManager.getHelper(this,JogadorRepositorySQLHelper.class);
+            this.repositorySQLHelper = OpenHelperManager.getHelper(this,RepositorySQLHelper.class);
         }
         return repositorySQLHelper;
     }

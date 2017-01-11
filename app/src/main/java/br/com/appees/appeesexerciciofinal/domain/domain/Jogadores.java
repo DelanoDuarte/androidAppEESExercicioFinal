@@ -18,12 +18,12 @@ public class Jogadores implements Serializable{
     private String nome;
 
     @DatabaseField(columnDefinition = "nivel_jogador")
-    private Integer nivel;
+    private Float nivel;
 
     @DatabaseField(foreign = true, foreignAutoRefresh = true, columnName = "id_partida")
     private Partida partida;
 
-    public Jogadores(String nome, Integer nivel, Partida partida) {
+    public Jogadores(String nome, Float nivel, Partida partida) {
         this.nome = nome;
         this.nivel = nivel;
         this.partida = partida;
@@ -41,11 +41,11 @@ public class Jogadores implements Serializable{
         this.nome = nome;
     }
 
-    public Integer getNivel() {
+    public Float getNivel() {
         return nivel;
     }
 
-    public void setNivel(Integer nivel) {
+    public void setNivel(Float nivel) {
         this.nivel = nivel;
     }
 
