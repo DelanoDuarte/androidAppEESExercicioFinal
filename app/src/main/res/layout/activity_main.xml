@@ -20,14 +20,12 @@
         android:id="@+id/btRachas"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Rachas"
-        android:onClick="AbrirRachas"/>
+        android:text="Rachas"/>
 
     <Button
         android:id="@+id/btJogadores"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Jogadores"
-        android:onClick="AbrirJogadores"/>
+        android:text="Jogadores"/>
 </LinearLayout>
 </RelativeLayout>

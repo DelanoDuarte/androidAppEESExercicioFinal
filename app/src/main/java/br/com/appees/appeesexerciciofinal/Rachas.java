@@ -1,41 +1,83 @@
 package br.com.appees.appeesexerciciofinal;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.appees.appeesexerciciofinal.domain.Partida;
-import br.com.appees.appeesexerciciofinal.repository.partida.PartidaRepository;
+import br.com.appees.appeesexerciciofinal.domain.domain.Partida;
+import br.com.appees.appeesexerciciofinal.repository.repository.partida.PartidaRepositorySQLHelper;
 
 public class Rachas extends AppCompatActivity {
 
-    PartidaRepository rep;
-    List<Partida> rachas;
+    ListView listView;
+    List<Partida> partidaList;
+    private PartidaRepositorySQLHelper repositorySQLHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rachas);
 
-        rep = new PartidaRepository(this);
-        rachas = rep.buscarTodasPartidas();
+        FloatingActionButton floatingActionButton= (FloatingActionButton) findViewById(R.id.fabAddRacha);
 
-        ListView lv = (ListView)findViewById(R.id.lvRachas);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), RachaActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        //ArrayAdapter adaptor = new ArrayAdapter<Partida>(this)
+
+        List<String> partidasTemp = new ArrayList<>();
+
+        listView = (ListView) findViewById(R.id.lvRachas);
+
+        try {
+            partidaList = getRepositorySQLHelper().getPartidaDao().queryBuilder().query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        for (Partida partida: partidaList){
+            partidasTemp.add(partida.getNome());
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.activity_layout_list_rachas,R.id.txtNomePartida,partidasTemp);
+
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent();
+
+                Bundle bundle= new Bundle();
+
+                startActivity(intent);
+            }
+        });
+
     }
 
-
-    public void CriarRacha(View view)
-    {
-        Intent it = new Intent(this, RachaActivity.class);
-        startActivity(it);
+    public PartidaRepositorySQLHelper getRepositorySQLHelper() {
+        if(repositorySQLHelper == null){
+            repositorySQLHelper = OpenHelperManager.getHelper(this,PartidaRepositorySQLHelper.class);
+        }
+        return repositorySQLHelper;
     }
+
 }

@@ -1,88 +1,46 @@
 package br.com.appees.appeesexerciciofinal;
 
-import android.app.ListActivity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Date;
-
-import br.com.appees.appeesexerciciofinal.domain.Partida;
 
 //import static br.com.appees.appeesexerciciofinal.R.id.textoDaLista2;
 
 public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
-    public ArrayList<Partida> partidas;
-
-    public MainActivity()
-    {
-        if (partidas == null)
-            partidas = new ArrayList<Partida>();
-    }
+    Button btnTelaJogador;
+    Button btnTelaPartida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //salvarNovasPartidas();
-
-        /*ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.layout_itens_lista_tela_inicial,R.id.textoDaLista1, partidas.toArray()){
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-
-                View view = super.getView(position, convertView, parent);
-
-                TextView textView = (TextView) view.findViewById(R.id.textoDaLista1);
-                TextView textView1 = (TextView) view.findViewById(R.id.textoDaLista2);
-
-                textView.setText(partidas.get(position).getNome());
-                textView1.setText(partidas.get(position).getLocal());
-
-
-                return view;
-            }
-        };*/
-
         setContentView(R.layout.activity_main);
 
 
+        btnTelaJogador = (Button) findViewById(R.id.btJogadores);
+        btnTelaPartida = (Button) findViewById(R.id.btRachas);
 
+        btnTelaPartida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),Rachas.class);
+                startActivity(intent);
+            }
+        });
 
-        //setListAdapter(arrayAdapter);
-
-
+        btnTelaJogador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),JogadoresActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
-
-    public void AbrirRachas(View view)
-    {
-        Intent it = new Intent(this, Rachas.class);
-        startActivity(it);
-    }
-
-    public void AbrirJogadores(View view)
-    {
-        Intent it = new Intent(this, JogadoresActivity.class);
-        startActivity(it);
-    }
-
-    /*@Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-        super.onListItemClick(l, v, position, id);
-
-        Toast.makeText(this,partidas.get(position).getNome(),Toast.LENGTH_LONG).show();
-
-    }*/
 
 }

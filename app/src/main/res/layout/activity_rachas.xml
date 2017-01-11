@@ -23,12 +23,6 @@
         android:text="Rachas"
         android:textColor="@color/colorPrimaryDark"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:id="@+id/lvRachas">
-    </ListView>
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,12 +30,18 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
-        app:layout_anchor="@id/lvRachas"
+        app:layout_anchor="@+id/lvRachas"
         app:layout_anchorGravity="bottom|right|end"
         app:fabSize="normal"
         android:background="@color/colorPrimary"
         app:backgroundTint="@color/colorPrimaryDark"
-        android:onClick="CriarRacha"
         >
     </android.support.design.widget.FloatingActionButton>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:id="@+id/lvRachas">
+    </ListView>
 </android.support.design.widget.CoordinatorLayout>
