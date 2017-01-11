@@ -21,8 +21,13 @@ import br.com.appees.appeesexerciciofinal.domain.Partida;
 
 public class MainActivity extends AppCompatActivity /*ListActivity*/ {
 
-    ArrayList<Partida> partidas;
+    public ArrayList<Partida> partidas;
 
+    public MainActivity()
+    {
+        if (partidas == null)
+            partidas = new ArrayList<Partida>();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

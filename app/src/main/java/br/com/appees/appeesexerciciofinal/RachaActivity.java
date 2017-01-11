@@ -10,6 +10,7 @@ import java.util.Date;
 
 import br.com.appees.appeesexerciciofinal.domain.Jogadores;
 import br.com.appees.appeesexerciciofinal.domain.Partida;
+import br.com.appees.appeesexerciciofinal.repository.partida.PartidaRepository;
 
 public class RachaActivity extends AppCompatActivity {
 
@@ -46,6 +47,8 @@ public class RachaActivity extends AppCompatActivity {
         //data = Date.parse(h.getText().toString());
 
         racha = new Partida(nome,local,qtdJogadores);
+        PartidaRepository rep = new PartidaRepository(this);
+        rep.salvarPartida(racha);
 
     }
 }
