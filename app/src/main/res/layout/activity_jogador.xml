@@ -31,26 +31,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/ll_NomeJogador"
-        android:layout_marginTop="10dp"
-        android:id="@+id/ll_NivelJogador">
+        android:id="@+id/ll_NivelJogador"
+        android:layout_below="@+id/ll_NomeJogador"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_NivelJogadores"
-            android:text="Nível do Jogadores (0 a 5)"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:id="@+id/ed_NivelJogadores"/>
+            android:text="Nível do Jogadores (1 a 5)"/>
+
     </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bt_Salvar"
-        android:layout_below="@id/ll_NivelJogador"
-        android:layout_margin="50dp"
-        android:text="Salvar"/>
+        android:text="Salvar"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/ratingBarNivelJogador"
+        android:layout_centerHorizontal="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBarNivelJogador"
+        android:layout_below="@+id/ll_NivelJogador"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 </RelativeLayout>
